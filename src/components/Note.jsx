@@ -1,11 +1,10 @@
 import React from "react";
 
-function Note() {
-  Note = <div className="note">
-    <h3>Today's Todos</h3>
-    <p>Today I am going to code a Todo List App</p>
+function Note(props) {
+  return <div className="note">
+    <h3>{props.title}</h3>
+    <p>{props.content}</p>
   </div>
-  return Note
 }
 
 export default Note;
