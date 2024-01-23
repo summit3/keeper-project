@@ -4,16 +4,13 @@ import Footer from "./Footer";
 import Note from "./Note";
 import notes from "../Notes";
 
-function appendNote(noteItem) {
-  return <Note 
+function App() {
+  return [<Header />, notes.map((noteItem) => <Note 
     key = {noteItem.key}
     title = {noteItem.title}
     content = {noteItem.content}
   />
-}
-
-function App() {
-  return [<Header />, notes.map(appendNote), <Footer />]
+  ), <Footer />]
 }
 
 export default App;
