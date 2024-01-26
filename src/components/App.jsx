@@ -15,7 +15,7 @@ function App() {
     <div>
       <Header />
       <CreateArea notes={notes} setNotes={setNotes}/>
-      <Note key={1} title={"title"} content={"content"} />
+      <Note notes={notes}/>
       <Footer />
     </div>
   );
