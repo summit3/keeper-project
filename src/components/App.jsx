@@ -6,10 +6,7 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [notes, setNotes] = useState([{
-    title: "",
-    content: ""
-  }])
+  const [notes, setNotes] = useState([])
 
   function deleteItem(id) {
     setNotes((prevItems) => {
