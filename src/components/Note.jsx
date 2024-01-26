@@ -1,13 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Note(props) {
-  return (
+    return (
     <div className="note">
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
+      <h1>"title"</h1>
+      <p>"content"</p>
       <button>DELETE</button>
     </div>
-  );
+    )
 }
 
 export default Note;

@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 
-function CreateArea() {
-  
+function CreateArea(props) {
+
   const [text, setText] = useState({
     title:"",
     content:""
   })
-
+  
   function handleChange(event) {
 
     const {name, value} = event.target
@@ -19,12 +19,28 @@ function CreateArea() {
     })
   }
 
+  function addToNotes(event) {
+    event.preventDefault();
+    props.setNotes((prevNotes) => [
+        ...prevNotes,
+        {
+          title: text.title,
+          content: text.content
+        }
+      ])
+
+      setText({
+        title: "",
+        content: ""
+      })
+  }
+
   return (
     <div>
       <form>
-        <input onChange={handleChange}  name="title" placeholder="Title" />
-        <textarea onChange={handleChange} name="content" placeholder="Take a note..." rows="3" />
-        <button>Add</button>
+        <input onChange={handleChange}  name="title" placeholder="Title" value={text.title}/>
+        <textarea onChange={handleChange} name="content" placeholder="Take a note..." rows="3" value={text.content}/>
+        <button onClick={addToNotes}>Add</button>
       </form>
     </div>
   );
