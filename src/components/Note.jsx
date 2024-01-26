@@ -9,7 +9,9 @@ function Note(props) {
     <div className="note" key={index}>
       <h1>{noteItem.title}</h1>
       <p>{noteItem.content}</p>
-      <button>DELETE</button>
+      <button onClick={() => {
+        props.deleteItem(index)
+      }} id={index}>DELETE</button>
     </div>
     )
 }))

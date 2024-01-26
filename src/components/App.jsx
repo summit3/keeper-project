@@ -11,11 +11,19 @@ function App() {
     content: ""
   }])
 
+  function deleteItem(id) {
+    setNotes((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !==id
+      })
+    })
+  }
+
   return (
     <div>
       <Header />
       <CreateArea notes={notes} setNotes={setNotes}/>
-      <Note notes={notes}/>
+      <Note notes={notes} deleteItem={deleteItem}/>
       <Footer />
     </div>
   );
