@@ -1,4 +1,4 @@
-const notes = [
+ const notes = [
   {
     key: 1,
     title: "Delegation",
